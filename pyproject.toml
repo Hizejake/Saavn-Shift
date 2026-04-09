@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "saavnshift"
+version = "0.1.0"
+description = "Transfer playlists into JioSaavn with Playwright automation."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Arpan" }
+]
+dependencies = [
+  "playwright>=1.58,<2",
+]
+
+[project.scripts]
+saavnshift = "saavnshift.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
