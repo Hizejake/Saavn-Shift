@@ -22,6 +22,25 @@ This rewrite keeps the same spirit while reorganizing the tool as a Python packa
 
 The original JavaScript script updated the source CSV directly. This package defaults to creating a working copy so your original export remains untouched unless you explicitly opt into `--in-place`.
 
+## Get a CSV with TuneMyMusic
+
+If your playlist is currently on Spotify, YouTube Music, Apple Music, or another supported service, you can export it to a CSV file with TuneMyMusic.
+
+1. Open https://www.tunemymusic.com/.
+2. Choose your source music service and sign in if TuneMyMusic asks for access.
+3. Select the playlist, liked songs, or library items you want to export.
+4. Choose `Export to file` as the destination.
+5. Let TuneMyMusic generate the file, then download the CSV export to your computer.
+6. Place the file somewhere convenient and pass its path to `saavnshift transfer`.
+
+Example:
+
+```powershell
+saavnshift transfer --playlist "SJ1" --csv "C:\Users\arpan\Downloads\My Spotify Library.csv" --auth-path auth.json
+```
+
+SaavnShift looks for common song-title and artist columns such as `Track name`, `track`, `song`, `title`, `Artist name`, `artist`, and `artists`.
+
 ## Install
 
 ```powershell
